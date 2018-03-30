@@ -144,7 +144,7 @@ class Resurrection:
           if self.do_soft_bootstrap():
             break
           time.sleep(10)
-        if attempt_number + 1 >= soft_bootstrap_retry:
+        if attempt_number + 1 >= self.soft_bootstrap_retry:
           self.do_hard_bootstrap()
 
 reanimator = Resurrection(consul_health_url, consul_last_commited_url, soft_bootstrap_retry)
